@@ -41,11 +41,16 @@
   }
   .quote{
     background-color:#0b6991;
+    margin: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
     border-radius: 18px;
   }
   .quote:hover {
     background-color:#0580b5;
     border-radius: 18px;
+    color: white;
   }
   .carousel-item img{
     width: 100%;
@@ -90,6 +95,17 @@
   border-top: 3px solid #bbb;
   width: 100%;
 }
+.idea{
+  padding-bottom: 80px;
+}
+.idea-section {
+      background-image: url('https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      padding: 50px;
+      text-align: center;
+    }
 .swiper {
       width: 100%;
       padding-top: 50px;
@@ -128,7 +144,42 @@
       height: 100%;
       object-fit: cover;
     }
-
+    .animated-counter {
+      text-align: center;
+    }
+    
+    .animated-counter .counter {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .animated-counter .counter-desc {
+      font-size: 18px;
+      color: #777;
+    }
+    
+    /* Animation */
+    .animated-counter .counter-value {
+      opacity: 0;
+      animation: count-up 1s ease-in-out;
+    }
+    .stats{
+      background-color: #0580b5;
+      margin-bottom: 80px;
+    }
+    
+    @keyframes count-up {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     @media (max-width: 760px) {
       .swiper-button-next2 {
         right: 20px;
@@ -144,6 +195,9 @@
         text-align: center;
       }
     @media (min-width: 300px) and (max-width: 370px){
+      a.nav-link.quote {
+    margin: 0 20px 0 0;
+}
       .pl-5{
         padding:0 !important;
       }
@@ -178,6 +232,9 @@
 
 }
 @media (min-width: 371px) and (max-width: 1000px){
+  a.nav-link.quote {
+    margin: 0 20px 0 0;
+}
       .pl-5{
         padding:0 !important;
       }
@@ -231,11 +288,11 @@
       <div class="pl-5">
       <a class="navbar-brand" href="#"><img class="logo" src="https://spacemanager.in/wp-content/uploads/2023/01/logo-o-150x150.png"></a>
       <a class="navbar-brand" href="#"><img class="logo" src="https://spacemanager.in/wp-content/uploads/2023/01/title.png"></a>              
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>  
+      </button>   -->
     </div>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">       
+    <div class="collapse  justify-content-center" id="navbarNav">       
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active w-100" href="#">HOME</a>
@@ -249,14 +306,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="#service">SERVICES</a>
           </li>
-          <li class="nav-item quote">
-            <a class="nav-link active text-white" href="#quote">QUOTE</a>
-          </li>
         </ul>
-      </nav>
-
-      
     </div>
+    <a class="nav-link quote" href="#quote">QUOTE</a>
+    <button class="navbar" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+
+  </nav>
 
     <section class="slide">
      
@@ -408,6 +465,53 @@
           </div>
         </div>
       </div>
+</section>
+
+<section class="idea">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 idea-section">
+        <h2>Do you have an idea?</h2>
+        <p>Want to make it real?</p>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="body">Message:</label>
+            <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container text-light">
+    <div class="row text-light">
+      <div class="col-md-4 animated-counter p-3">
+        <div class="counter" data-target="100">0</div>
+        <div class="counter-desc  text-light" style="font-weight: 700; font-size: 30px;">Number of Clients</div>
+      </div>
+      <div class="col-md-4 animated-counter p-3">
+        <div class="counter" data-target="100">0</div>
+        <div class="counter-desc text-light " style="font-weight: 700; font-size: 30px;">Client Satisfaction</div>
+      </div>
+      <div class="col-md-4 animated-counter p-3">
+        <div class="counter" data-target="67">0</div>
+        <div class="counter-desc text-light" style="font-weight: 700; font-size: 30px;">Ongoing Projects</div>
+      </div>
+    </div>
+  </div>
 </section>
 
     <section class="reviews">
@@ -868,6 +972,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
@@ -918,6 +1023,21 @@
         el: ".swiper-pagination",
         clickable: true,
       },
+    });
+
+    $(document).ready(function() {
+      $('.animated-counter .counter').each(function() {
+        var $this = $(this);
+        var target = parseInt($this.attr('data-target'));
+
+        $({ counter: 0 }).animate({ counter: target }, {
+          duration: 1000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.ceil(this.counter));
+          }
+        });
+      });
     });
   </script>
 </body>
