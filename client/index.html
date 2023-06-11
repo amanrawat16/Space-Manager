@@ -17,13 +17,21 @@
     font-weight: 700;
     font-size: 20px;
   }
+  .img:hover{
+    background-color: black;
+  }
+  .navbar{
+    padding: 0;
+    margin: 0;
+    border: 0 !important;
+  }
   body{
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
   }
   .btn-primary{
-    background-color: #0580b5;
+    background-color: #0D6C68;
   }
   .heading{
     font-weight: 700;
@@ -40,7 +48,7 @@
     height: 60px;
   }
   .quote{
-    background-color:#0b6991;
+    background-color:#0D6C68;
     margin: 40px;
     font-weight: 700;
     font-size: 20px;
@@ -64,14 +72,16 @@
     padding: 15px;
   }
   .services{
-    padding-top: 120px;
+    margin-top: 120px;
     padding-bottom: 120px;
   }
-  .services .container-fluid{
-    background-color: #578BB9;
+  .ani-head{
+    margin-top: 100px;
+    font-weight: 700;
+    font-size: 60px;
   }
   .rating{
-    border: 2px solid #0580b5;
+    border: 2px solid #0D6C68;
     padding: 20px;
     margin: 10px;
   }
@@ -96,6 +106,7 @@
   width: 100%;
 }
 .idea{
+  margin-top: 100px;
   padding-bottom: 80px;
 }
 .idea-section {
@@ -149,15 +160,15 @@
     }
     
     .animated-counter .counter {
-      font-size: 40px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #333;
+      font-size: 80px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 10px;
     }
     
     .animated-counter .counter-desc {
       font-size: 18px;
-      color: #777;
+      color: #0D6C68;
     }
     
     /* Animation */
@@ -166,7 +177,6 @@
       animation: count-up 1s ease-in-out;
     }
     .stats{
-      background-color: #0580b5;
       margin-bottom: 80px;
     }
     
@@ -281,6 +291,73 @@
      }
    }
 
+   label{
+ display:flex;
+  flex-direction:column;
+  width:70px;
+  cursor:pointer;
+  background: white;
+    margin: 0;
+}
+
+label span{
+  background: #0D6C68;
+  border-radius:10px;
+  height:7px;
+  margin: 7px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+.services{
+  background: url('./h1-s4-bg.jpg');
+}
+
+span:nth-of-type(1){
+  width:50%;
+  
+}
+
+span:nth-of-type(2){
+  width:100%;
+}
+
+
+span:nth-of-type(3){
+  width:75%;
+ 
+}
+
+input[type="checkbox"]{
+  display:none;
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(8px,0px)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  
+  transform-origin:top;
+  transform:rotatez(-45deg)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(30px,-11px) rotatez(45deg);
+
+}
+.h-img:hover{
+  border: 2px solid white;
+  height: 100%;
+}
+
+
 
 </style>
 <body>
@@ -309,8 +386,13 @@
         </ul>
     </div>
     <a class="nav-link quote" href="#quote">QUOTE</a>
-    <button class="navbar" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <label for="check">
+        <input type="checkbox" id="check"/> 
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
     </button> 
 
   </nav>
@@ -431,88 +513,66 @@
     </section>
 
 <section class="services" id="service">
+  
       <div class="container-fluid text-center text-light" style="overflow:hidden;">
         <p class="heading py-4">SERVICES WE DO</p>
         <h2>Our Featured Services</h2>
-
+       
         <div class="swiper2 mySwiper2">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
+                <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
             </div>
             <div class="swiper-slide">
-                <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/serrviice-01-584x760.jpg"  alt="...">
+                <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/serrviice-01-584x760.jpg"  alt="...">
             </div>
             <div class="swiper-slide">
-                <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/portfolio-5-584x760.jpg"  alt="...">
+                <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/portfolio-5-584x760.jpg"  alt="...">
                
             </div>
             <div class="swiper-slide">
-                <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/04/project-img2-584x760.jpg" alt="...">
+                <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/04/project-img2-584x760.jpg" alt="...">
              
             </div>
             <div class="swiper-slide">
              
-                <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/serrviice-01-584x760.jpg"  alt="...">
+                <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/serrviice-01-584x760.jpg"  alt="...">
                 
             </div> 
             <div class="swiper-slide">
-              <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
+              <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
           </div>
           <div class="swiper-slide">
-            <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
+            <img class="h-img" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/blog-img5-584x760.jpg"  alt="..."> 
         </div> 
           </div>
-        </div>
+        </div> 
       </div>
-</section>
-
-<section class="idea">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 idea-section">
-        <h2>Do you have an idea?</h2>
-        <p>Want to make it real?</p>
-      </div>
-      <div class="col-md-6">
-        <form>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group">
-            <label for="body">Message:</label>
-            <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter your message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="stats">
-  <div class="container text-light">
-    <div class="row text-light">
+  <div class="container">
+    <h2 class="ani-head col-md-10">Well-established and experienced in many fields.</h2>
+    <div class="row">
       <div class="col-md-4 animated-counter p-3">
         <div class="counter" data-target="100">0</div>
-        <div class="counter-desc  text-light" style="font-weight: 700; font-size: 30px;">Number of Clients</div>
+        <div class="counter-desc" style="font-weight: 700; font-size: 30px;">Number of Clients</div>
       </div>
       <div class="col-md-4 animated-counter p-3">
         <div class="counter" data-target="100">0</div>
-        <div class="counter-desc text-light " style="font-weight: 700; font-size: 30px;">Client Satisfaction</div>
+        <div class="counter-desc " style="font-weight: 700; font-size: 30px;">Client Satisfaction</div>
       </div>
       <div class="col-md-4 animated-counter p-3">
         <div class="counter" data-target="67">0</div>
-        <div class="counter-desc text-light" style="font-weight: 700; font-size: 30px;">Ongoing Projects</div>
+        <div class="counter-desc" style="font-weight: 700; font-size: 30px;">Ongoing Projects</div>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
 
     <section class="reviews">
       <div class="container ">
@@ -804,7 +864,7 @@
               <img src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/04/project-img3-610x750.jpg" />
             </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <!-- <div class="swiper-pagination"></div> -->
         </div>
         <!-- <div class="container-fluid">
           <div class="row justify-content-center">
@@ -840,6 +900,34 @@
               <div class="col text-center">
                 <img class="img-fluid" src="https://themetechmount.com/wordpress/inoterior/wp-content/uploads/2021/03/client03.png" alt="">
                 </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="idea">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 idea-section">
+            <h2>Do you have an idea?</h2>
+            <p>Want to make it real?</p>
+          </div>
+          <div class="col-md-6">
+            <form>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="body">Message:</label>
+                <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter your message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
