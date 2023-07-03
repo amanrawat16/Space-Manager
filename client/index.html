@@ -389,7 +389,45 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3){
   font-weight: 700;
   padding: 12px 50px;
 }
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22px;
+  width: 30px;
+}
 
+.nav-toggle .bar {
+  height: 4px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: #0D6C68;
+  transition: all 100ms ease-in-out;
+}
+
+.nav-toggle:hover {
+  cursor: pointer;
+}
+
+.x:nth-of-type(1) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 28px;
+}
+
+.x:nth-of-type(2) {
+  transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+.x:nth-of-type(3) {
+  transition: all 100ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 28px;
+}
 </style>
 <body>
     <nav class="container-fluid navbar  fixed-top navbar-expand-lg navbar-light justify-content-center">
@@ -418,12 +456,17 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3){
     </div>
     <a class="nav-link quote" href="#quote">QUOTE</a>
     <button class="navbar" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <label for="check">
+      <!-- <label for="check">
         <input type="checkbox" id="check"/> 
         <span></span>
         <span></span>
         <span></span>
-      </label>
+      </label> -->
+      <a class="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
     </button> 
 
   </nav>
@@ -1290,6 +1333,14 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3){
         });
       });
     });
+    let navToggle = document.querySelector('.nav-toggle')
+let bars = document.querySelectorAll('.bar')
+
+function toggleHamburger(e) {
+  bars.forEach(bar => bar.classList.toggle('x'))
+}
+
+navToggle.addEventListener('click', toggleHamburger)
   </script>
 </body>
 </html>
